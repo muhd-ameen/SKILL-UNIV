@@ -1,38 +1,40 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import {
+  programs,
+  enquiries,
+  type InsertProgram,
+  type InsertEnquiry,
+  type Program,
+  type Enquiry
+} from "@shared/schema";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getPrograms(): Promise<Program[]>;
+  getProgramBySlug(slug: string): Promise<Program | undefined>;
+  createProgram(program: InsertProgram): Promise<Program>;
+  createEnquiry(enquiry: InsertEnquiry): Promise<Enquiry>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DatabaseStorage implements IStorage {
+  async getPrograms(): Promise<Program[]> {
+    return await db.select().from(programs);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getProgramBySlug(slug: string): Promise<Program | undefined> {
+    const [program] = await db.select().from(programs).where(eq(programs.slug, slug));
+    return program;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async createProgram(program: InsertProgram): Promise<Program> {
+    const [newProgram] = await db.insert(programs).values(program).returning();
+    return newProgram;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createEnquiry(enquiry: InsertEnquiry): Promise<Enquiry> {
+    const [newEnquiry] = await db.insert(enquiries).values(enquiry).returning();
+    return newEnquiry;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
