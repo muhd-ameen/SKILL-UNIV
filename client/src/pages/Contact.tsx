@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 // Extend schema for client-side validation
 const formSchema = insertEnquirySchema.extend({
@@ -35,6 +36,27 @@ export default function Contact() {
   });
 
   function onSubmit(values: FormValues) {
+    // Build structured WhatsApp message
+    const whatsappNumber = "919035514805";
+    const message = `📋 *New Enquiry from Skill Univ Website*
+
+👤 *Name:* ${values.name}
+📧 *Email:* ${values.email}
+📱 *Phone:* +91 ${values.phone}
+🎓 *Interested Program:* ${values.interest || "Not specified"}
+💬 *Message:* ${values.message || "No message provided"}
+
+---
+_Sent from Skill Univ Contact Form_`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
+
+    // Also save to backend
     mutate(values, {
       onSuccess: () => {
         form.reset();
@@ -44,18 +66,25 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="bg-secondary text-white py-16">
+      <SEO 
+        title="Contact Us"
+        canonicalUrl="/contact"
+        description="Get in touch with Skill Univ. Contact our admissions team for course enquiries, career counseling, and enrollment. Located in Koramangala, Bangalore. Call +91 90355 14805."
+        keywords="contact skill univ, skill university address, bangalore training institute contact, course enquiry, admission enquiry, career counseling bangalore"
+      />
+      
+      <div className="bg-[#252422] text-white py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">Get in Touch</h1>
           <p className="text-white/70">Have questions? Our advisors are here to help.</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-6 text-foreground">Contact Information</h2>
             <p className="text-muted-foreground mb-8">
               Fill out the form and our team will get back to you within 24 hours.
             </p>
@@ -66,8 +95,8 @@ export default function Contact() {
                   <Mail />
                 </div>
                 <div>
-                  <p className="font-semibold text-secondary">Email</p>
-                  <p className="text-muted-foreground">admissions@skilluniv.com</p>
+                  <p className="font-semibold text-foreground">Email</p>
+                  <p className="text-muted-foreground">admissions@skilluniv.in</p>
                 </div>
               </div>
               
@@ -76,8 +105,8 @@ export default function Contact() {
                   <Phone />
                 </div>
                 <div>
-                  <p className="font-semibold text-secondary">Phone</p>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="font-semibold text-foreground">Phone</p>
+                  <p className="text-muted-foreground">+91 90355 14805</p>
                 </div>
               </div>
 
@@ -86,16 +115,16 @@ export default function Contact() {
                   <MapPin />
                 </div>
                 <div>
-                  <p className="font-semibold text-secondary">Office</p>
-                  <p className="text-muted-foreground">123 Tech Park, Innovation Way<br/>San Francisco, CA 94107</p>
+                  <p className="font-semibold text-foreground">Office</p>
+                  <p className="text-muted-foreground">Koramangala, 5th Block<br/>Bangalore, Karnataka 560095</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl border border-border">
-            <h3 className="text-xl font-bold mb-6">Send us a Message</h3>
+          <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xl border border-border">
+            <h3 className="text-xl font-bold mb-6 text-foreground">Send us a Message</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -133,7 +162,18 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Phone</FormLabel>
                         <FormControl>
-                          <Input placeholder="(555) 123-4567" {...field} className="rounded-xl h-12" />
+                          <div className="flex h-12 rounded-xl border border-input overflow-hidden focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                            <div className="flex items-center gap-1.5 px-3 bg-muted border-r border-input text-foreground font-medium text-sm select-none">
+                              <span>🇮🇳</span>
+                              <span>+91</span>
+                            </div>
+                            <input
+                              type="tel"
+                              placeholder="98765 43210"
+                              {...field}
+                              className="flex-1 px-3 bg-background text-foreground text-sm outline-none placeholder:text-muted-foreground"
+                            />
+                          </div>
                         </FormControl>
                         <FormMessage />
                       </FormItem>

@@ -58,5 +58,145 @@
     "format": "Online",
     "outcomes": ["Figma Proficiency", "User Research", "Wireframing & Prototyping", "Design Systems", "Portfolio Development"],
     "slug": "ui-ux-design-fundamentals"
+  },
+  {
+    "id": 7,
+    "title": "Accounting & Financial Management",
+    "description": "Master the fundamentals of accounting, financial reporting, and bookkeeping. Learn to prepare financial statements, manage budgets, and understand tax compliance for businesses of all sizes.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Finance Professionals",
+    "format": "Hybrid",
+    "outcomes": ["Financial Statement Preparation", "Bookkeeping Mastery", "Tax Compliance", "Budget Management", "Accounting Software Proficiency"],
+    "slug": "accounting-financial-management"
+  },
+  {
+    "id": 8,
+    "title": "Supply Chain & Logistics Management",
+    "description": "Optimize the flow of goods from supplier to customer. Learn inventory management, warehouse operations, transportation logistics, and supply chain analytics to drive operational efficiency.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Operations Professionals",
+    "format": "Hybrid",
+    "outcomes": ["Inventory Optimization", "Warehouse Management", "Transportation Planning", "Vendor Relations", "Supply Chain Analytics"],
+    "slug": "supply-chain-logistics"
+  },
+  {
+    "id": 9,
+    "title": "Business English Mastery",
+    "description": "Elevate your professional communication with advanced business English skills. Perfect your writing, speaking, and presentation abilities for the global corporate environment.",
+    "category": "Language & Communication",
+    "idealFor": "Working Professionals",
+    "format": "Online",
+    "outcomes": ["Professional Writing", "Business Presentations", "Email Etiquette", "Meeting Communication", "Cross-Cultural Communication"],
+    "slug": "business-english-mastery"
+  },
+  {
+    "id": 10,
+    "title": "Arabic for Business",
+    "description": "Develop professional Arabic language skills for the Middle Eastern business market. Learn formal business vocabulary, correspondence, and cultural nuances for effective regional communication.",
+    "category": "Language & Communication",
+    "idealFor": "Business Professionals",
+    "format": "In-person",
+    "outcomes": ["Business Arabic Vocabulary", "Formal Correspondence", "Meeting Etiquette", "Cultural Awareness", "Negotiation Language"],
+    "slug": "arabic-for-business"
+  },
+  {
+    "id": 11,
+    "title": "Human Resources Professional",
+    "description": "Build expertise in talent acquisition, employee relations, and HR operations. Learn modern HR practices, compliance requirements, and people management strategies for organizational success.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "HR Professionals",
+    "format": "Hybrid",
+    "outcomes": ["Talent Acquisition", "Employee Relations", "HR Compliance", "Performance Management", "HRIS Systems"],
+    "slug": "human-resources-professional"
+  },
+  {
+    "id": 12,
+    "title": "Project Management Essentials",
+    "description": "Master project planning, execution, and delivery using industry-standard methodologies. Learn Agile, Scrum, and traditional project management approaches to lead successful projects.",
+    "category": "Professional Upskilling",
+    "idealFor": "Project Managers",
+    "format": "Hybrid",
+    "outcomes": ["Agile & Scrum", "Project Planning", "Risk Management", "Stakeholder Communication", "Project Documentation"],
+    "slug": "project-management-essentials"
+  },
+  {
+    "id": 13,
+    "title": "Customer Service Excellence",
+    "description": "Develop world-class customer service skills for frontline and support roles. Learn conflict resolution, communication techniques, and customer relationship management for lasting client satisfaction.",
+    "category": "Professional Upskilling",
+    "idealFor": "Customer-Facing Roles",
+    "format": "In-person",
+    "outcomes": ["Conflict Resolution", "Active Listening", "CRM Tools", "Complaint Handling", "Customer Retention"],
+    "slug": "customer-service-excellence"
+  },
+  {
+    "id": 14,
+    "title": "Tally & GST Accounting",
+    "description": "Gain hands-on expertise in Tally ERP software and GST compliance. Learn to manage accounts, generate invoices, file GST returns, and maintain accurate financial records for businesses.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Accountants & Bookkeepers",
+    "format": "Online",
+    "outcomes": ["Tally ERP Proficiency", "GST Filing", "Invoice Management", "Financial Reporting", "Inventory Accounting"],
+    "slug": "tally-gst-accounting"
+  },
+  {
+    "id": 15,
+    "title": "Warehouse Operations & Inventory Control",
+    "description": "Learn the essentials of warehouse management, inventory control systems, and logistics coordination. Develop skills in stock management, order fulfillment, and warehouse safety protocols.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Warehouse Staff",
+    "format": "In-person",
+    "outcomes": ["Inventory Control", "Order Fulfillment", "Safety Protocols", "WMS Software", "Quality Inspection"],
+    "slug": "warehouse-operations"
+  },
+  {
+    "id": 16,
+    "title": "Spoken English & Personality Development",
+    "description": "Build confidence in spoken English while developing a professional personality. Overcome communication barriers, improve accent and fluency, and develop interpersonal skills for career growth.",
+    "category": "Language & Communication",
+    "idealFor": "Students & Freshers",
+    "format": "In-person",
+    "outcomes": ["Fluent Speaking", "Accent Improvement", "Public Speaking", "Body Language", "Confidence Building"],
+    "slug": "spoken-english-personality"
+  },
+  {
+    "id": 17,
+    "title": "Advanced Excel & Office Productivity",
+    "description": "Master Microsoft Excel and essential office tools for maximum workplace productivity. Learn advanced formulas, pivot tables, data analysis, and automation techniques used by top professionals.",
+    "category": "Professional Upskilling",
+    "idealFor": "Office Professionals",
+    "format": "Online",
+    "outcomes": ["Advanced Excel Formulas", "Pivot Tables & Charts", "Data Analysis", "VBA Basics", "PowerPoint Mastery"],
+    "slug": "advanced-excel-productivity"
+  },
+  {
+    "id": 18,
+    "title": "Sales & Negotiation Skills",
+    "description": "Develop persuasive selling techniques and negotiation strategies that close deals. Learn consultative selling, objection handling, and relationship-building skills for consistent sales success.",
+    "category": "Professional Upskilling",
+    "idealFor": "Sales Professionals",
+    "format": "In-person",
+    "outcomes": ["Consultative Selling", "Objection Handling", "Negotiation Tactics", "Pipeline Management", "Client Relationship Building"],
+    "slug": "sales-negotiation-skills"
+  },
+  {
+    "id": 19,
+    "title": "Import-Export & International Trade",
+    "description": "Navigate the complexities of global trade with expertise in import-export documentation, customs procedures, and international logistics. Perfect for entrepreneurs and trade professionals.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Trade Professionals",
+    "format": "Hybrid",
+    "outcomes": ["Export Documentation", "Customs Procedures", "INCOTERMS", "Letter of Credit", "Trade Compliance"],
+    "slug": "import-export-trade"
+  },
+  {
+    "id": 20,
+    "title": "French for Professionals",
+    "description": "Learn professional French for international business opportunities. Develop reading, writing, and conversational skills tailored for the corporate environment and global career advancement.",
+    "category": "Language & Communication",
+    "idealFor": "Career Advancers",
+    "format": "Online",
+    "outcomes": ["Business French Vocabulary", "Professional Writing", "Conversational Fluency", "Cultural Etiquette", "Presentation Skills"],
+    "slug": "french-for-professionals"
   }
 ]
