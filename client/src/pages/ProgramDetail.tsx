@@ -3,7 +3,7 @@ import { useRoute, Link } from "wouter";
 import { useProgram } from "@/hooks/use-programs";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Check, Clock, Calendar, Briefcase, ArrowLeft } from "lucide-react";
+import { Check, Clock, Briefcase, ChevronRight, Home } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { EnrollmentModal } from "@/components/EnrollmentModal";
 import { SEO } from "@/components/SEO";
@@ -53,11 +53,26 @@ export default function ProgramDetail() {
       <div className="bg-[#252422] text-white pt-16 pb-24 md:pt-24 md:pb-32 relative overflow-hidden">
          <div className="absolute top-0 right-0 w-2/3 h-full bg-white/5 skew-x-12 translate-x-1/4"></div>
          <div className="container mx-auto px-4 relative z-10">
-          <Link href="/programs">
-            <Button variant="link" className="text-white/60 hover:text-white pl-0 mb-8 gap-2">
-              <ArrowLeft size={16} /> Back to Programs
-            </Button>
-          </Link>
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-sm mb-8 flex-wrap" aria-label="Breadcrumb">
+            <Link href="/" onClick={() => window.scrollTo(0, 0)}>
+              <span className="flex items-center gap-1 text-white/60 hover:text-white transition-colors cursor-pointer">
+                <Home size={14} />
+                <span className="hidden sm:inline">Home</span>
+              </span>
+            </Link>
+            <ChevronRight size={14} className="text-white/40" />
+            <Link href="/programs" onClick={() => window.scrollTo(0, 0)}>
+              <span className="text-white/60 hover:text-white transition-colors cursor-pointer">Programs</span>
+            </Link>
+            <ChevronRight size={14} className="text-white/40" />
+            <Link href={`/programs?category=${encodeURIComponent(program.category)}`} onClick={() => window.scrollTo(0, 0)}>
+              <span className="text-white/60 hover:text-white transition-colors cursor-pointer hidden sm:inline">{program.category}</span>
+            </Link>
+            <ChevronRight size={14} className="text-white/40 hidden sm:block" />
+            <span className="text-white font-medium truncate max-w-[200px] sm:max-w-none">{program.title}</span>
+          </nav>
+          
           <div className="flex flex-col lg:flex-row gap-8 justify-between items-center lg:items-start">
             <div className="max-w-3xl text-center lg:text-left">
               <Badge className="bg-primary text-secondary mb-6 hover:bg-primary">{program.category}</Badge>

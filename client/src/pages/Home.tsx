@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, TrendingUp, Users, ShieldCheck } from "lucide
 import { Button } from "@/components/ui/button";
 import { usePrograms } from "@/hooks/use-programs";
 import { ProgramCard } from "@/components/ProgramCard";
-import { Skeleton } from "@/components/ui/skeleton";
+import { ProgramCardSkeleton } from "@/components/ProgramCardSkeleton";
 import { ContactOptionsModal } from "@/components/ContactOptionsModal";
 import { SEO } from "@/components/SEO";
 
@@ -158,7 +158,7 @@ export default function Home() {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-96 rounded-2xl bg-muted animate-pulse" />
+                <ProgramCardSkeleton key={i} />
               ))}
             </div>
           ) : (

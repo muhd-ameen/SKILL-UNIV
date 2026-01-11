@@ -1,0 +1,9 @@
+[build]
+  command = "npm install && npx vite build"
+  publish = "dist/public"
+
+# Handle SPA routing - redirect all routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
