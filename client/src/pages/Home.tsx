@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import heroImage from '@assets/generated_images/modern_abstract_illustration_of_career_growth_and_employability.png';
 import { ArrowRight, CheckCircle2, TrendingUp, Users, ShieldCheck } from "lucide-react";
+
+const heroImage = "/images/hero-illustration.png";
 import { Button } from "@/components/ui/button";
 import { usePrograms } from "@/hooks/use-programs";
 import { ProgramCard } from "@/components/ProgramCard";
