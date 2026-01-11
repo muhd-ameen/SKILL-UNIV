@@ -99,7 +99,7 @@ export default function ProgramDetail() {
               <div className="mt-8">
                 <Button 
                   onClick={() => setIsEnrollModalOpen(true)}
-                  className="w-full bg-primary text-secondary hover:bg-primary/90 font-bold rounded-xl py-6 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 animate-pulse hover:animate-none"
+                  className="w-full bg-primary text-secondary hover:bg-primary/90 font-bold rounded-xl py-6 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
                 >
                   Enroll Now
                 </Button>
