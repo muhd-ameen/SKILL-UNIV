@@ -1,5 +1,7 @@
 import { z } from 'zod';
-import { insertEnquirySchema, insertProgramSchema, programs, enquiries } from './schema';
+import { insertEnquirySchema, type Program, type Enquiry, type InsertEnquiry } from './schema';
+
+export type { InsertEnquiry };
 
 export const errorSchemas = {
   validation: z.object({
@@ -20,14 +22,14 @@ export const api = {
       method: 'GET' as const,
       path: '/api/programs',
       responses: {
-        200: z.array(z.custom<typeof programs.$inferSelect>()),
+        200: z.array(z.custom<Program>()),
       },
     },
     get: {
       method: 'GET' as const,
       path: '/api/programs/:slug',
       responses: {
-        200: z.custom<typeof programs.$inferSelect>(),
+        200: z.custom<Program>(),
         404: errorSchemas.notFound,
       },
     },
@@ -38,7 +40,7 @@ export const api = {
       path: '/api/enquiries',
       input: insertEnquirySchema,
       responses: {
-        201: z.custom<typeof enquiries.$inferSelect>(),
+        201: z.custom<Enquiry>(),
         400: errorSchemas.validation,
       },
     },

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Foundational Career Program",
+    "description": "A comprehensive start for fresh graduates looking to enter the workforce with confidence. This program covers everything from professional communication to interview preparation, ensuring you're ready to make a strong first impression in the corporate world.",
+    "category": "Foundational",
+    "idealFor": "Students & Graduates",
+    "format": "Hybrid",
+    "outcomes": ["Communication Mastery", "Corporate Etiquette", "Resume Building", "Interview Preparation", "LinkedIn Optimization"],
+    "slug": "foundational-career-program"
+  },
+  {
+    "id": 2,
+    "title": "Full Stack Developer Pathway",
+    "description": "Master the MERN stack and build real-world applications from day one. Learn to architect scalable applications, work with databases, and deploy production-ready code. Our hands-on approach ensures you graduate with a portfolio of impressive projects.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Career Switchers",
+    "format": "Online",
+    "outcomes": ["React & Node.js Proficiency", "Database Design", "API Development", "Cloud Deployment", "Version Control with Git"],
+    "slug": "full-stack-developer"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Specialist",
+    "description": "Learn to lead, sell, and communicate through digital channels. Master the art of creating compelling campaigns, analyzing data, and driving measurable results for businesses of all sizes.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Marketing Professionals",
+    "format": "Online",
+    "outcomes": ["SEO/SEM", "Social Media Strategy", "Analytics & Reporting", "Content Marketing", "Paid Advertising"],
+    "slug": "digital-marketing-specialist"
+  },
+  {
+    "id": 4,
+    "title": "Leadership & Management",
+    "description": "Upskill for the next level of your career with practical leadership training. Learn proven frameworks for team management, strategic decision-making, and organizational leadership.",
+    "category": "Professional Upskilling",
+    "idealFor": "Managers",
+    "format": "In-person",
+    "outcomes": ["Team Management", "Strategic Thinking", "Conflict Resolution", "Executive Presence", "Change Management"],
+    "slug": "leadership-management"
+  },
+  {
+    "id": 5,
+    "title": "Data Analytics Bootcamp",
+    "description": "Transform raw data into actionable insights. Learn SQL, Python, and visualization tools to become a data-driven decision maker. Perfect for professionals looking to add analytical skills to their toolkit.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Analysts & Business Professionals",
+    "format": "Hybrid",
+    "outcomes": ["SQL Mastery", "Python for Data", "Data Visualization", "Statistical Analysis", "Business Intelligence"],
+    "slug": "data-analytics-bootcamp"
+  },
+  {
+    "id": 6,
+    "title": "UI/UX Design Fundamentals",
+    "description": "Design beautiful, user-centered digital experiences. Learn industry-standard tools like Figma, understand user research methodologies, and create portfolios that stand out to employers.",
+    "category": "Role-Based Skill Programs",
+    "idealFor": "Designers & Creatives",
+    "format": "Online",
+    "outcomes": ["Figma Proficiency", "User Research", "Wireframing & Prototyping", "Design Systems", "Portfolio Development"],
+    "slug": "ui-ux-design-fundamentals"
+  }
+]

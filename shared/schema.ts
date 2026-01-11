@@ -1,37 +1,48 @@
-import { pgTable, text, serial, timestamp, varchar } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-// === TABLE DEFINITIONS ===
-export const programs = pgTable("programs", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  category: text("category").notNull(),
-  idealFor: text("ideal_for").notNull(),
-  format: text("format").notNull(),
-  outcomes: text("outcomes").array(),
-  slug: text("slug").notNull().unique(),
-});
+// === TYPE DEFINITIONS ===
+export interface Program {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  idealFor: string;
+  format: string;
+  outcomes: string[] | null;
+  slug: string;
+}
 
-export const enquiries = pgTable("enquiries", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  phone: text("phone"),
-  interest: text("interest"),
-  message: text("message"),
-  createdAt: timestamp("created_at").defaultNow(),
-});
+export interface Enquiry {
+  id: number;
+  name: string;
+  email: string;
+  phone: string | null;
+  interest: string | null;
+  message: string | null;
+  createdAt: Date | null;
+}
 
 // === SCHEMAS ===
-export const insertProgramSchema = createInsertSchema(programs).omit({ id: true });
-export const insertEnquirySchema = createInsertSchema(enquiries).omit({ id: true, createdAt: true });
+export const insertProgramSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  description: z.string().min(1, "Description is required"),
+  category: z.string().min(1, "Category is required"),
+  idealFor: z.string().min(1, "Ideal for is required"),
+  format: z.string().min(1, "Format is required"),
+  outcomes: z.array(z.string()).optional(),
+  slug: z.string().min(1, "Slug is required"),
+});
+
+export const insertEnquirySchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().optional(),
+  interest: z.string().optional(),
+  message: z.string().optional(),
+});
 
 // === TYPES ===
-export type Program = typeof programs.$inferSelect;
 export type InsertProgram = z.infer<typeof insertProgramSchema>;
-export type Enquiry = typeof enquiries.$inferSelect;
 export type InsertEnquiry = z.infer<typeof insertEnquirySchema>;
 
 // === API CONTRACT TYPES ===

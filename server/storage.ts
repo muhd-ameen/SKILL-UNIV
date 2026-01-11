@@ -1,13 +1,22 @@
-import { db } from "./db";
-import {
-  programs,
-  enquiries,
-  type InsertProgram,
-  type InsertEnquiry,
-  type Program,
-  type Enquiry
-} from "@shared/schema";
-import { eq } from "drizzle-orm";
+import { readFileSync } from "fs";
+import { join } from "path";
+import type { Program, InsertProgram, Enquiry, InsertEnquiry } from "@shared/schema";
+
+// Load programs from JSON file
+const programsPath = join(process.cwd(), "data", "programs.json");
+let programsData: Program[] = [];
+
+try {
+  const fileContent = readFileSync(programsPath, "utf-8");
+  programsData = JSON.parse(fileContent);
+} catch (error) {
+  console.error("Error loading programs.json:", error);
+  programsData = [];
+}
+
+// In-memory storage for enquiries (logs to console in static mode)
+const enquiriesStore: Enquiry[] = [];
+let enquiryIdCounter = 1;
 
 export interface IStorage {
   getPrograms(): Promise<Program[]>;
@@ -16,25 +25,42 @@ export interface IStorage {
   createEnquiry(enquiry: InsertEnquiry): Promise<Enquiry>;
 }
 
-export class DatabaseStorage implements IStorage {
+export class JsonStorage implements IStorage {
   async getPrograms(): Promise<Program[]> {
-    return await db.select().from(programs);
+    return programsData;
   }
 
   async getProgramBySlug(slug: string): Promise<Program | undefined> {
-    const [program] = await db.select().from(programs).where(eq(programs.slug, slug));
-    return program;
+    return programsData.find((p) => p.slug === slug);
   }
 
   async createProgram(program: InsertProgram): Promise<Program> {
-    const [newProgram] = await db.insert(programs).values(program).returning();
+    const newProgram: Program = {
+      ...program,
+      id: programsData.length + 1,
+      outcomes: program.outcomes || null,
+    };
+    programsData.push(newProgram);
     return newProgram;
   }
 
   async createEnquiry(enquiry: InsertEnquiry): Promise<Enquiry> {
-    const [newEnquiry] = await db.insert(enquiries).values(enquiry).returning();
+    const newEnquiry: Enquiry = {
+      id: enquiryIdCounter++,
+      name: enquiry.name,
+      email: enquiry.email,
+      phone: enquiry.phone || null,
+      interest: enquiry.interest || null,
+      message: enquiry.message || null,
+      createdAt: new Date(),
+    };
+    
+    // Log the enquiry (in production, you might want to send an email or store differently)
+    console.log("📧 New Enquiry Received:", newEnquiry);
+    enquiriesStore.push(newEnquiry);
+    
     return newEnquiry;
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new JsonStorage();

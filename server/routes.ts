@@ -38,56 +38,5 @@ export async function registerRoutes(
     }
   });
 
-  // Seed data function
-  await seedDatabase();
-
   return httpServer;
-}
-
-async function seedDatabase() {
-  const existing = await storage.getPrograms();
-  if (existing.length === 0) {
-    const seedPrograms = [
-      {
-        title: "Foundational Career Program",
-        description: "A comprehensive start for fresh graduates looking to enter the workforce with confidence.",
-        category: "Foundational",
-        idealFor: "Students & Graduates",
-        format: "Hybrid",
-        outcomes: ["Communication Mastery", "Corporate Etiquette", "Resume Building"],
-        slug: "foundational-career-program"
-      },
-      {
-        title: "Full Stack Developer Pathway",
-        description: "Master the MERN stack and build real-world applications from day one.",
-        category: "Role-Based Skill Programs",
-        idealFor: "Career Switchers",
-        format: "Online",
-        outcomes: ["React & Node.js Proficiency", "Database Design", "API Development"],
-        slug: "full-stack-developer"
-      },
-      {
-        title: "Digital Marketing Specialist",
-        description: "Learn to lead, sell, and communicate through digital channels.",
-        category: "Role-Based Skill Programs",
-        idealFor: "Marketing Professionals",
-        format: "Online",
-        outcomes: ["SEO/SEM", "Social Media Strategy", "Analytics"],
-        slug: "digital-marketing-specialist"
-      },
-      {
-        title: "Leadership & Management",
-        description: "Upskill for the next level of your career with practical leadership training.",
-        category: "Professional Upskilling",
-        idealFor: "Managers",
-        format: "In-person",
-        outcomes: ["Team Management", "Strategic Thinking", "Conflict Resolution"],
-        slug: "leadership-management"
-      }
-    ];
-
-    for (const p of seedPrograms) {
-      await storage.createProgram(p);
-    }
-  }
 }
