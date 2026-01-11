@@ -2,18 +2,23 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, TrendingUp, Users, ShieldCheck } from "lucide-react";
-
-const heroImage = "/images/hero-illustration-1.png";
 import { Button } from "@/components/ui/button";
 import { usePrograms } from "@/hooks/use-programs";
 import { ProgramCard } from "@/components/ProgramCard";
 import { ProgramCardSkeleton } from "@/components/ProgramCardSkeleton";
 import { ContactOptionsModal } from "@/components/ContactOptionsModal";
 import { SEO } from "@/components/SEO";
+import { useTheme } from "@/hooks/use-theme";
 
 export default function Home() {
   const { data: programs, isLoading } = usePrograms();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { theme } = useTheme();
+  
+  // Use different hero image based on theme
+  const heroImage = theme === "dark" 
+    ? "/images/hero-illustration-dark.png" 
+    : "/images/hero-illustration-1.png";
 
   const features = [
     {
