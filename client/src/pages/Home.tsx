@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, TrendingUp, Users, ShieldCheck } from "lucide-react";
 
-const heroImage = "/images/hero-illustration.png";
+const heroImage = "/images/hero-illustration-1.png";
 import { Button } from "@/components/ui/button";
 import { usePrograms } from "@/hooks/use-programs";
 import { ProgramCard } from "@/components/ProgramCard";
