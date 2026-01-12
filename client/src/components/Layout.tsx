@@ -186,7 +186,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-2">
                 <li><Link href="/about" onClick={() => window.scrollTo(0, 0)}><span className="text-white/70 hover:text-primary cursor-pointer">About Us</span></Link></li>
                 <li><Link href="/contact" onClick={() => window.scrollTo(0, 0)}><span className="text-white/70 hover:text-primary cursor-pointer">Contact</span></Link></li>
-                <li><a href="#" className="text-white/70 hover:text-primary">Careers</a></li>
+                <li><Link href="/careers" onClick={() => window.scrollTo(0, 0)}><span className="text-white/70 hover:text-primary cursor-pointer">Careers</span></Link></li>
               </ul>
             </div>
           </div>

@@ -11,6 +11,8 @@ import Programs from "@/pages/Programs";
 import ProgramDetail from "@/pages/ProgramDetail";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import Careers from "@/pages/Careers";
+import CareerDetail from "@/pages/CareerDetail";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import NotFound from "@/pages/not-found";
@@ -24,6 +26,8 @@ function Router() {
         <Route path="/programs/:slug" component={ProgramDetail} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+        <Route path="/careers" component={Careers} />
+        <Route path="/careers/:slug" component={CareerDetail} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
         <Route component={NotFound} />
