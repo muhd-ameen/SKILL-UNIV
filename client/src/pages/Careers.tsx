@@ -8,68 +8,6 @@ import { Badge } from "@/components/ui/badge";
 export const jobs = [
   {
     id: 1,
-    title: "Full Stack Developer",
-    slug: "full-stack-developer",
-    department: "Engineering",
-    location: "Bangalore, India",
-    type: "Full-time",
-    experience: "2-4 years",
-    description: "We're looking for a passionate Full Stack Developer to join our engineering team and help build the future of skill-based education.",
-    responsibilities: [
-      "Develop and maintain web applications using React, Node.js, and modern frameworks",
-      "Collaborate with design and product teams to implement new features",
-      "Write clean, maintainable, and well-documented code",
-      "Participate in code reviews and mentor junior developers",
-      "Optimize applications for maximum speed and scalability"
-    ],
-    requirements: [
-      "2-4 years of experience in full stack development",
-      "Proficiency in React, TypeScript, Node.js, and SQL/NoSQL databases",
-      "Experience with RESTful APIs and microservices architecture",
-      "Strong problem-solving skills and attention to detail",
-      "Excellent communication and teamwork abilities"
-    ],
-    benefits: [
-      "Competitive salary and equity options",
-      "Health insurance for you and your family",
-      "Flexible working hours and remote work options",
-      "Learning and development budget",
-      "Free access to all Skill Univ courses"
-    ]
-  },
-  {
-    id: 2,
-    title: "Digital Marketing Manager",
-    slug: "digital-marketing-manager",
-    department: "Marketing",
-    location: "Bangalore, India",
-    type: "Full-time",
-    experience: "3-5 years",
-    description: "Join our marketing team to drive growth and build brand awareness for Skill Univ across digital channels.",
-    responsibilities: [
-      "Develop and execute digital marketing strategies across SEO, SEM, and social media",
-      "Manage paid advertising campaigns and optimize for ROI",
-      "Create compelling content for various marketing channels",
-      "Analyze campaign performance and provide actionable insights",
-      "Collaborate with sales team to generate qualified leads"
-    ],
-    requirements: [
-      "3-5 years of experience in digital marketing",
-      "Proven track record in SEO, Google Ads, and social media marketing",
-      "Experience with marketing analytics tools (Google Analytics, etc.)",
-      "Strong copywriting and content creation skills",
-      "EdTech or education industry experience is a plus"
-    ],
-    benefits: [
-      "Competitive salary and performance bonuses",
-      "Health insurance for you and your family",
-      "Flexible working hours and remote work options",
-      "Learning and development budget",
-      "Free access to all Skill Univ courses"
-    ]
-  },
-  {
-    id: 3,
     title: "Student Success Manager",
     slug: "student-success-manager",
     department: "Operations",
@@ -80,7 +18,7 @@ export const jobs = [
     responsibilities: [
       "Onboard new students and guide them through their learning journey",
       "Monitor student progress and provide proactive support",
-      "Conduct regular check-ins and gather feedback",
+      "Conduct regular check-ins and gather feedback from students",
       "Coordinate with instructors to address student concerns",
       "Assist with placement support and career counseling"
     ],
@@ -88,7 +26,7 @@ export const jobs = [
       "1-3 years of experience in customer success or student support",
       "Excellent communication and interpersonal skills",
       "Empathetic and patient with strong problem-solving abilities",
-      "Experience with CRM tools and data analysis",
+      "Proficiency in MS Office and basic computer skills",
       "Passion for education and helping others succeed"
     ],
     benefits: [
@@ -100,65 +38,127 @@ export const jobs = [
     ]
   },
   {
-    id: 4,
-    title: "Content Writer",
-    slug: "content-writer",
-    department: "Marketing",
-    location: "Remote",
+    id: 2,
+    title: "Admissions Counselor",
+    slug: "admissions-counselor",
+    department: "Operations",
+    location: "Bangalore, India",
     type: "Full-time",
     experience: "1-2 years",
-    description: "Create engaging content that educates, inspires, and converts our audience into learners.",
+    description: "Be the first point of contact for aspiring learners and guide them in choosing the right program for their career goals.",
     responsibilities: [
-      "Write blog posts, articles, and educational content",
-      "Create copy for landing pages, emails, and social media",
-      "Research industry trends and create relevant content",
-      "Collaborate with SEO team to optimize content",
-      "Edit and proofread content for quality and accuracy"
+      "Handle inbound inquiries via phone, email, and WhatsApp",
+      "Understand student needs and recommend suitable programs",
+      "Conduct counseling sessions and explain program benefits",
+      "Follow up with prospective students and convert leads",
+      "Maintain accurate records in CRM system"
     ],
     requirements: [
-      "1-2 years of content writing experience",
-      "Excellent writing and editing skills in English",
-      "Understanding of SEO best practices",
-      "Ability to simplify complex topics",
-      "Portfolio showcasing writing samples"
+      "1-2 years of experience in sales, counseling, or customer service",
+      "Excellent verbal and written communication in English and Hindi",
+      "Strong convincing and negotiation skills",
+      "Target-oriented mindset with a positive attitude",
+      "Knowledge of education industry is a plus"
+    ],
+    benefits: [
+      "Competitive salary with attractive incentives",
+      "Health insurance coverage",
+      "Performance bonuses",
+      "Career advancement opportunities",
+      "Free access to all Skill Univ courses"
+    ]
+  },
+  {
+    id: 3,
+    title: "Operations Coordinator",
+    slug: "operations-coordinator",
+    department: "Operations",
+    location: "Bangalore, India",
+    type: "Full-time",
+    experience: "1-3 years",
+    description: "Ensure smooth day-to-day operations and support various teams to deliver an exceptional experience for students and staff.",
+    responsibilities: [
+      "Coordinate class schedules and instructor availability",
+      "Manage student documentation and enrollment processes",
+      "Handle logistics for workshops, events, and webinars",
+      "Maintain inventory of learning materials and resources",
+      "Support HR and admin tasks as needed"
+    ],
+    requirements: [
+      "1-3 years of experience in operations or administration",
+      "Strong organizational and multitasking abilities",
+      "Excellent attention to detail",
+      "Proficiency in MS Office (Excel, Word, PowerPoint)",
+      "Good communication and coordination skills"
     ],
     benefits: [
       "Competitive salary",
-      "Work from anywhere",
-      "Flexible hours",
-      "Learning opportunities",
+      "Health insurance for you and your family",
+      "Collaborative work environment",
+      "Learning and growth opportunities",
+      "Free access to all Skill Univ courses"
+    ]
+  },
+  {
+    id: 4,
+    title: "Placement Coordinator",
+    slug: "placement-coordinator",
+    department: "Operations",
+    location: "Bangalore, India",
+    type: "Full-time",
+    experience: "2-4 years",
+    description: "Bridge the gap between our students and employers by facilitating placement opportunities and career support.",
+    responsibilities: [
+      "Build and maintain relationships with hiring companies",
+      "Organize placement drives and interview sessions",
+      "Prepare students for interviews with mock sessions and guidance",
+      "Track and report placement metrics and success rates",
+      "Coordinate with academic team for industry-aligned curriculum"
+    ],
+    requirements: [
+      "2-4 years of experience in placements, HR, or recruitment",
+      "Strong networking and relationship-building skills",
+      "Excellent communication and presentation abilities",
+      "Understanding of job market trends and hiring practices",
+      "Experience in education sector is preferred"
+    ],
+    benefits: [
+      "Competitive salary with performance incentives",
+      "Health insurance coverage",
+      "Opportunity to impact student careers",
+      "Professional development support",
       "Free access to all Skill Univ courses"
     ]
   },
   {
     id: 5,
-    title: "Instructor - Data Analytics",
-    slug: "instructor-data-analytics",
-    department: "Academics",
-    location: "Bangalore, India / Remote",
-    type: "Part-time / Contract",
-    experience: "5+ years",
-    description: "Share your expertise and shape the next generation of data professionals as an instructor at Skill Univ.",
+    title: "Office Administrator",
+    slug: "office-administrator",
+    department: "Operations",
+    location: "Bangalore, India",
+    type: "Full-time",
+    experience: "0-2 years",
+    description: "Keep our office running smoothly by managing administrative tasks and providing support to all teams.",
     responsibilities: [
-      "Deliver engaging live sessions on data analytics topics",
-      "Create and update course curriculum and materials",
-      "Mentor students and provide feedback on assignments",
-      "Stay updated with industry trends and best practices",
-      "Participate in curriculum development meetings"
+      "Manage front desk operations and visitor management",
+      "Handle phone calls, emails, and correspondence",
+      "Maintain office supplies and coordinate with vendors",
+      "Assist with document management and filing",
+      "Support event coordination and meeting arrangements"
     ],
     requirements: [
-      "5+ years of industry experience in data analytics",
-      "Proficiency in SQL, Python, Excel, and BI tools",
-      "Previous teaching or mentoring experience preferred",
-      "Excellent communication and presentation skills",
-      "Passion for education and knowledge sharing"
+      "0-2 years of experience in office administration",
+      "Pleasant personality with professional demeanor",
+      "Good communication skills in English and local language",
+      "Basic computer skills and MS Office proficiency",
+      "Organized and detail-oriented approach"
     ],
     benefits: [
-      "Competitive hourly rate",
-      "Flexible schedule",
-      "Work from home options",
-      "Be part of shaping future professionals",
-      "Access to Skill Univ network and resources"
+      "Competitive salary",
+      "Health insurance",
+      "Friendly work environment",
+      "Career growth path",
+      "Free access to all Skill Univ courses"
     ]
   }
 ];
