@@ -15,6 +15,12 @@ export default function Home() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const { theme } = useTheme();
   
+  // Get current month and year
+  const currentDate = new Date();
+  const monthNames = ["January", "February", "March", "April", "May", "June", 
+    "July", "August", "September", "October", "November", "December"];
+  const currentMonthYear = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+  
   // Use different hero image based on theme
   const heroImage = theme === "dark" 
     ? "/images/hero-illustration-dark.png" 
@@ -58,7 +64,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-foreground font-medium text-sm mb-6">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                Accepting new cohort applications
+                Accepting new cohort applications {currentMonthYear}
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6">
                 Skills that <br/>
