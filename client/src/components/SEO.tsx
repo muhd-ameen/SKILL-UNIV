@@ -10,7 +10,7 @@ interface SEOProps {
   noIndex?: boolean;
 }
 
-const defaultTitle = "Skill Univ - Not EdTech. EmployTech.";
+const defaultTitle = "Skill Univ - Skills that keep you hired";
 const defaultDescription = "Transform your career with Skill Univ's industry-aligned programs. Master Full Stack Development, Digital Marketing, Data Analytics, and more. 92% hiring rate. Join our Bangalore campus today!";
 const defaultKeywords = "skill training, career development, full stack development, digital marketing, data analytics, professional courses, Bangalore, employability skills, job-ready training, tech education";
 const siteUrl = "https://theskilluniv.com";
