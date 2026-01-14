@@ -22,7 +22,7 @@ export default function CareerDetail() {
     );
   }
 
-  const whatsappNumber = "919035514805";
+  const whatsappNumber = "919626664792";
   const whatsappMessage = encodeURIComponent(
     `Hi! I'm interested in the "${job.title}" position at Skill Univ. I would like to know more about this opportunity.`
   );

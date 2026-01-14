@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
               <p className="text-muted-foreground">Koramangala, 5th Block</p>
               <p className="text-muted-foreground">Bangalore, Karnataka 560095</p>
               <p className="text-muted-foreground">Email: privacy@skilluniv.in</p>
-              <p className="text-muted-foreground">Phone: +91 90355 14805</p>
+              <p className="text-muted-foreground">Phone: +91 96266 64792</p>
             </div>
           </section>
 

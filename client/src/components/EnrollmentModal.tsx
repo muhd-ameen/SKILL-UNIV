@@ -41,7 +41,7 @@ export function EnrollmentModal({ open, onOpenChange, programName }: EnrollmentM
     setIsSubmitting(true);
 
     // Build structured WhatsApp message
-    const whatsappNumber = "919035514805";
+    const whatsappNumber = "919626664792";
     const message = `📋 *New Enrollment Request - Skill Univ*
 
 🎓 *Program:* ${programName}

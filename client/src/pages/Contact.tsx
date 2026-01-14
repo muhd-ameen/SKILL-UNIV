@@ -37,7 +37,7 @@ export default function Contact() {
 
   function onSubmit(values: FormValues) {
     // Build structured WhatsApp message
-    const whatsappNumber = "919035514805";
+    const whatsappNumber = "919626664792";
     const message = `📋 *New Enquiry from Skill Univ Website*
 
 👤 *Name:* ${values.name}
@@ -69,7 +69,7 @@ _Sent from Skill Univ Contact Form_`;
       <SEO 
         title="Contact Us"
         canonicalUrl="/contact"
-        description="Get in touch with Skill Univ. Contact our admissions team for course enquiries, career counseling, and enrollment. Located in Koramangala, Bangalore. Call +91 90355 14805."
+        description="Get in touch with Skill Univ. Contact our admissions team for course enquiries, career counseling, and enrollment. Located in Koramangala, Bangalore. Call +91 96266 64792."
         keywords="contact skill univ, skill university address, bangalore training institute contact, course enquiry, admission enquiry, career counseling bangalore"
       />
       
@@ -106,7 +106,7 @@ _Sent from Skill Univ Contact Form_`;
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Phone</p>
-                  <p className="text-muted-foreground">+91 90355 14805</p>
+                  <p className="text-muted-foreground">+91 96266 64792</p>
                 </div>
               </div>
 

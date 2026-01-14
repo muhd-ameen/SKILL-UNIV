@@ -7,8 +7,8 @@ interface ContactOptionsModalProps {
 }
 
 export function ContactOptionsModal({ open, onOpenChange }: ContactOptionsModalProps) {
-  const whatsappNumber = "919035514805";
-  const phoneNumber = "+919035514805";
+  const whatsappNumber = "919626664792";
+  const phoneNumber = "+919626664792";
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hi! I would like to speak with an advisor about Skill Univ programs.");
@@ -62,7 +62,7 @@ export function ContactOptionsModal({ open, onOpenChange }: ContactOptionsModalP
             </div>
             <div className="text-center">
               <p className="font-bold text-foreground text-base sm:text-lg">Call Us</p>
-              <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">+91 90355 14805</p>
+              <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">+91 96266 64792</p>
             </div>
           </button>
         </div>
