@@ -97,7 +97,7 @@ export default function CareerDetail() {
                   Apply via WhatsApp
                 </a>
                 <a 
-                  href={`mailto:career@skilluniv.in?subject=Application for ${job.title}&body=Hi,%0D%0A%0D%0AI am interested in the ${job.title} position.%0D%0A%0D%0APlease find my resume attached.%0D%0A%0D%0AThank you.`}
+                  href={`mailto:shyamjith@theskilluniv.com?subject=Application for ${job.title}&body=Hi,%0D%0A%0D%0AI am interested in the ${job.title} position.%0D%0A%0D%0APlease find my resume attached.%0D%0A%0D%0AThank you.`}
                   className="w-full flex items-center justify-center gap-2 bg-white/10 text-white font-bold rounded-xl py-4 hover:bg-white/20 transition-colors border border-white/20"
                 >
                   <Mail className="w-5 h-5" />
@@ -105,7 +105,7 @@ export default function CareerDetail() {
                 </a>
               </div>
               <p className="text-white/50 text-sm mt-4 text-center">
-                career@skilluniv.in
+                shyamjith@theskilluniv.com
               </p>
             </div>
           </div>
@@ -177,10 +177,10 @@ export default function CareerDetail() {
                   Apply via WhatsApp
                 </Button>
               </a>
-              <a href="mailto:career@skilluniv.in">
+              <a href="mailto:shyamjith@theskilluniv.com">
                 <Button size="lg" variant="outline" className="rounded-full px-8 gap-2">
                   <Mail className="w-5 h-5" />
-                  career@skilluniv.in
+                  shyamjith@theskilluniv.com
                 </Button>
               </a>
             </div>

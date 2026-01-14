@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { usePrograms } from "@/hooks/use-programs";
 
 // Extend schema for client-side validation
 const formSchema = insertEnquirySchema.extend({
@@ -23,6 +24,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function Contact() {
   const { mutate, isPending } = useCreateEnquiry();
+  const { data: programs, isLoading: isLoadingPrograms } = usePrograms();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -96,7 +98,7 @@ _Sent from Skill Univ Contact Form_`;
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Email</p>
-                  <p className="text-muted-foreground">admissions@skilluniv.in</p>
+                  <p className="text-muted-foreground">shyamjith@theskilluniv.com</p>
                 </div>
               </div>
               
@@ -134,7 +136,7 @@ _Sent from Skill Univ Contact Form_`;
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} className="rounded-xl h-12" />
+                        <Input placeholder="Rahul Sharma" {...field} className="rounded-xl h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -149,7 +151,7 @@ _Sent from Skill Univ Contact Form_`;
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="john@example.com" {...field} className="rounded-xl h-12" />
+                          <Input placeholder="rahul.sharma@gmail.com" {...field} className="rounded-xl h-12" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -169,7 +171,7 @@ _Sent from Skill Univ Contact Form_`;
                             </div>
                             <input
                               type="tel"
-                              placeholder="98765 43210"
+                              placeholder="96266 64792"
                               {...field}
                               className="flex-1 px-3 bg-background text-foreground text-sm outline-none placeholder:text-muted-foreground"
                             />
@@ -194,10 +196,18 @@ _Sent from Skill Univ Contact Form_`;
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="Full Stack Development">Full Stack Development</SelectItem>
-                          <SelectItem value="Data Science">Data Science</SelectItem>
-                          <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
+                          {isLoadingPrograms ? (
+                            <SelectItem value="loading" disabled>Loading programs...</SelectItem>
+                          ) : (
+                            <>
+                              {programs?.map((program) => (
+                                <SelectItem key={program.id} value={program.title}>
+                                  {program.title}
+                                </SelectItem>
+                              ))}
+                              <SelectItem value="Other">Other</SelectItem>
+                            </>
+                          )}
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -213,7 +223,7 @@ _Sent from Skill Univ Contact Form_`;
                       <FormLabel>Message (Optional)</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Tell us about your background..." 
+                          placeholder="I am interested in learning more about your programs. I have completed my graduation and looking to upskill..." 
                           className="rounded-xl min-h-[120px]" 
                           {...field} 
                         />

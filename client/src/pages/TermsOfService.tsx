@@ -162,7 +162,7 @@ export default function TermsOfService() {
               <p className="text-foreground font-semibold">Skill Univ</p>
               <p className="text-muted-foreground">Koramangala, 5th Block</p>
               <p className="text-muted-foreground">Bangalore, Karnataka 560095</p>
-              <p className="text-muted-foreground">Email: legal@skilluniv.in</p>
+              <p className="text-muted-foreground">Email: shyamjith@theskilluniv.com</p>
               <p className="text-muted-foreground">Phone: +91 96266 64792</p>
             </div>
           </section>

@@ -186,11 +186,11 @@ export default function Careers() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
-              href="mailto:career@skilluniv.in"
+              href="mailto:shyamjith@theskilluniv.com"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
             >
               <Mail className="w-5 h-5" />
-              career@skilluniv.in
+              shyamjith@theskilluniv.com
             </a>
           </div>
         </div>
@@ -255,7 +255,7 @@ export default function Careers() {
               We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
             </p>
             <a 
-              href="mailto:career@skilluniv.in"
+              href="mailto:shyamjith@theskilluniv.com"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
             >
               <Mail className="w-4 h-4" />
