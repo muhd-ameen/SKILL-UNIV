@@ -46,6 +46,9 @@ export function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:secure_url" content={ogImage} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:alt" content="Skill Univ Logo" />
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -53,6 +56,7 @@ export function SEO({
       <meta property="twitter:title" content={fullTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
+      <meta property="twitter:image:alt" content="Skill Univ Logo" />
     </Helmet>
   );
 }
