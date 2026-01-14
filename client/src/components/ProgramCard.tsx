@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Clock, User } from "lucide-react";
+import { ArrowRight, Clock, User, Calendar, Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { ProgramResponse } from "@shared/schema";
 
@@ -8,9 +8,16 @@ export function ProgramCard({ program }: { program: ProgramResponse }) {
     <Link href={`/programs/${program.slug}`} onClick={() => window.scrollTo(0, 0)}>
       <div className="group bg-card rounded-2xl border border-border p-6 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full cursor-pointer">
         <div className="flex justify-between items-start mb-4">
-          <Badge variant="secondary" className="bg-primary/80 text-primary-foreground font-medium">
-            {program.category}
-          </Badge>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="secondary" className="bg-primary/80 text-primary-foreground font-medium">
+              {program.category}
+            </Badge>
+            {program.guaranteedInternship && (
+              <Badge variant="secondary" className="bg-primary/20 text-primary font-medium border border-primary/40">
+                Guaranteed Internship
+              </Badge>
+            )}
+          </div>
           <div className="h-8 w-8 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
             <ArrowRight className="h-4 w-4 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
           </div>
@@ -25,6 +32,12 @@ export function ProgramCard({ program }: { program: ProgramResponse }) {
         </p>
         
         <div className="space-y-3 mb-6 pt-4 border-t border-border/50">
+          {program.duration && (
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Calendar className="w-4 h-4 text-primary" />
+              <span>{program.duration}</span>
+            </div>
+          )}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Clock className="w-4 h-4 text-primary" />
             <span>{program.format}</span>

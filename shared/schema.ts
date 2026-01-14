@@ -8,6 +8,8 @@ export interface Program {
   category: string;
   idealFor: string;
   format: string;
+  duration?: string | null;
+  guaranteedInternship?: boolean | null;
   outcomes: string[] | null;
   slug: string;
 }
@@ -29,6 +31,8 @@ export const insertProgramSchema = z.object({
   category: z.string().min(1, "Category is required"),
   idealFor: z.string().min(1, "Ideal for is required"),
   format: z.string().min(1, "Format is required"),
+  duration: z.string().optional().nullable(),
+  guaranteedInternship: z.boolean().optional().nullable(),
   outcomes: z.array(z.string()).optional(),
   slug: z.string().min(1, "Slug is required"),
 });

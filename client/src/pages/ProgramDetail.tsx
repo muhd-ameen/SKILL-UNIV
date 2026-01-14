@@ -3,7 +3,7 @@ import { useRoute, Link } from "wouter";
 import { useProgram } from "@/hooks/use-programs";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Check, Clock, Briefcase, ChevronRight, Home } from "lucide-react";
+import { Check, Clock, Briefcase, ChevronRight, Home, Calendar, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { EnrollmentModal } from "@/components/EnrollmentModal";
 import { SEO } from "@/components/SEO";
@@ -80,11 +80,28 @@ export default function ProgramDetail() {
               <p className="text-lg md:text-xl text-white/80 leading-relaxed">{program.description}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 min-w-[300px] w-full max-w-sm lg:w-auto">
+              {program.guaranteedInternship && (
+                <div className="mb-4 p-3 rounded-xl bg-primary/20 border border-primary/40">
+                  <div className="flex items-center gap-2 text-primary">
+                    <Award className="w-5 h-5" />
+                    <span className="font-bold text-sm">Guaranteed Internship</span>
+                  </div>
+                </div>
+              )}
               <div className="space-y-4">
+                {program.duration && (
+                  <div className="flex items-center gap-3">
+                    <Calendar className="text-primary" />
+                    <div>
+                      <p className="text-xs text-white/60">Duration</p>
+                      <p className="font-semibold">{program.duration}</p>
+                    </div>
+                  </div>
+                )}
                 <div className="flex items-center gap-3">
                   <Clock className="text-primary" />
                   <div>
-                    <p className="text-xs text-white/60">Duration</p>
+                    <p className="text-xs text-white/60">Format</p>
                     <p className="font-semibold">{program.format}</p>
                   </div>
                 </div>
@@ -138,28 +155,42 @@ export default function ProgramDetail() {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-foreground">Program Structure</h2>
               <div className="prose prose-lg dark:prose-invert text-muted-foreground">
-                <p>
-                  This comprehensive program is designed to give you practical, hands-on experience. 
-                  Unlike traditional education, we focus on project-based learning.
+                <p className="mb-6">
+                  This comprehensive program combines intensive learning with real-world experience through a guaranteed internship. 
+                  The structure is designed to give you practical, hands-on experience that directly translates to career success.
                 </p>
-                <ul className="list-none space-y-4 mt-6 pl-0">
-                  <li className="flex gap-3">
-                    <span className="font-bold text-primary">01.</span>
-                    <span>Foundations and Core Concepts</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-primary">02.</span>
-                    <span>Advanced Techniques & Best Practices</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-primary">03.</span>
-                    <span>Real-world Capstone Projects</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-primary">04.</span>
-                    <span>Career Prep & Interview Coaching</span>
-                  </li>
-                </ul>
+                <div className="space-y-6">
+                  <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
+                    <h3 className="font-bold text-lg text-foreground mb-2">Phase 1: Intensive Training (1 Month)</h3>
+                    <ul className="list-none space-y-3 mt-3 pl-0">
+                      <li className="flex gap-3">
+                        <span className="font-bold text-primary">01.</span>
+                        <span>Foundations and Core Concepts</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="font-bold text-primary">02.</span>
+                        <span>Advanced Techniques & Best Practices</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="font-bold text-primary">03.</span>
+                        <span>Real-world Capstone Projects</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="font-bold text-primary">04.</span>
+                        <span>Career Prep & Interview Coaching</span>
+                      </li>
+                    </ul>
+                  </div>
+                  {program.guaranteedInternship && (
+                    <div className="p-4 rounded-xl bg-primary/10 border border-primary/30">
+                      <h3 className="font-bold text-lg text-foreground mb-2">Phase 2: Guaranteed Internship (2 Months)</h3>
+                      <p className="text-muted-foreground">
+                        Apply your newly acquired skills in a real-world professional environment. Work on live projects, 
+                        gain industry experience, and build your professional network. This internship is guaranteed as part of your program.
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
