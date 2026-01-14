@@ -42,7 +42,7 @@ export default function Home() {
     <div className="w-full">
       <SEO 
         canonicalUrl="/"
-        description="Transform your career with Skill Univ's industry-aligned programs. Not EdTech, EmployTech. Master Full Stack Development, Digital Marketing, Data Analytics & more. 92% hiring rate. Based in Bangalore."
+        description="Transform your career with Skill Univ's industry-aligned programs. Skills that keep you hired. Master Full Stack Development, Digital Marketing, Data Analytics & more. 92% hiring rate. Based in Bangalore."
         keywords="skill training bangalore, career development india, full stack development course, digital marketing training, data analytics bootcamp, professional courses bangalore, employability skills, job-ready training, tech education india, placement guarantee courses"
       />
       
@@ -61,8 +61,8 @@ export default function Home() {
                 Accepting new cohort applications
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6">
-                Not EdTech. <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">EmployTech.</span>
+                Skills that <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">keep you hired.</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
                 Skills that keep you hired. We don't just teach you how to code; we teach you how to build, ship, and thrive in the modern tech ecosystem.

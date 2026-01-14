@@ -81,10 +81,10 @@ app.use((req, res, next) => {
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
+  // Other ports are firewalled. Default to 5001 if not specified (5000 is often used by macOS AirPlay).
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || "5000", 10);
+  const port = parseInt(process.env.PORT || "5001", 10);
   httpServer.listen(
     {
       port,
@@ -94,5 +94,14 @@ app.use((req, res, next) => {
     () => {
       log(`serving on port ${port}`);
     },
-  );
+  ).on("error", (err: NodeJS.ErrnoException) => {
+    if (err.code === "EADDRINUSE") {
+      log(`Port ${port} is already in use. Please kill the process using it or use a different port.`);
+      log(`To find the process: lsof -ti:${port}`);
+      log(`To kill it: kill -9 $(lsof -ti:${port})`);
+      process.exit(1);
+    } else {
+      throw err;
+    }
+  });
 })();

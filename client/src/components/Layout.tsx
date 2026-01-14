@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <img 
               src="/logo.png" 
               alt="Skill Univ" 
-              className="h-10 md:h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              className="h-16 md:h-20 w-auto cursor-pointer hover:opacity-80 transition-opacity"
             />
           </Link>
 
@@ -114,7 +114,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <img 
                   src="/logo.png" 
                   alt="Skill Univ" 
-                  className="h-16 md:h-20 w-auto mb-4 cursor-pointer hover:opacity-80 transition-opacity"
+                  className="h-32 md:h-40 w-auto mb-4 cursor-pointer hover:opacity-80 transition-opacity"
                 />
               </Link>
               <p className="text-white/70 max-w-sm mb-6">
